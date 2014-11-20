@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Generator
+   ========================================================================== */
+
+/* Utils
+	 ========================================================================== */
+
+percentage($n)
+	if $n == 0
+		0
+	else
+		unit($n * 100, "%")
+
+
+// http://nicolasgallagher.com/micro-clearfix-hack/
+clearfix()
+	&:before,
+	&:after
+		content " "
+		display table
+
+	&:after
+		clear both
+
+/* Framework
+	 ========================================================================== */
+
+calc-grid-column($index, $class, $type)
+	if $type == width and $index > 0
+		.grid-{$class}-{$index}
+			width percentage(($index / $grid-columns))
+	else if $type == offset
+		.grid-{$class}-offset-{$index}
+			margin-left percentage(($index / $grid-columns))
+
+
+loop-grid-columns($grid-columns, $class, $type)
+	for $index in $grid-columns..0
+		calc-grid-column($index, $class, $type)
+
+
+// Create grid for specific $class
+make-grid($class)
+	float-grid-columns($class)
+	loop-grid-columns($grid-columns, $class, width)
+	loop-grid-columns($grid-columns, $class, offset)
+
+
+make-row()
+	margin-left ($grid-gutter / -2)
+	margin-right ($grid-gutter / -2)
+
+
+/* Common
+	 ========================================================================== */
+
+.wrapper
+	max-width $wrapper-max-width
+	margin 0 auto
+	clearfix()
+	padding-left ($grid-gutter / 2)
+	padding-right ($grid-gutter / 2)
+
+[class*="grid-"]
+	position relative
+	// Prevent columns from collapsing when empty
+	min-height 1px
+	// And float the columns
+	float left
+	// Inner gutter via padding
+	padding-left ($grid-gutter / 2)
+	padding-right ($grid-gutter / 2)
+
+
+/* Rows contain and clear the floats of your columns.
+	 ========================================================================== */
+
+.row
+	make-row()
+	clearfix()
+
+
+/* Grid Generation
+	 ========================================================================== */
+
+make-grid-columns()
+
+if $mobile-first
+	make-grid(xs)
+
+	@media (min-width $screen-xs)
+		make-grid(sm)
+
+	@media (min-width $screen-sm)
+		make-grid(md)
+
+	@media (min-width $screen-md)
+		make-grid(lg)
+
+else
+	make-grid(lg)
+
+	@media (max-width $screen-md)
+		make-grid(md)
+
+	@media (max-width $screen-sm)
+		make-grid(sm)
+
+	@media (max-width $screen-xs)
+		make-grid(xs)
+
+
+/* Hide Elements
+	 ========================================================================== */
+
+if $mobile-first
+	.hide-xs
+		display none
+
+	@media (min-width $screen-xs)
+		.hide-sm
+			display none
+
+	@media (min-width $screen-sm)
+		.hide-md
+			display none
+	@media (min-width $screen-md)
+		.hide-lg
+			display none
+
+else
+	.hide-lg
+		display none
+
+	@media (max-width: $screen-md)
+		.hide-md
+			display none
+
+	@media (max-width: $screen-sm)
+		.hide-sm
+			display none
+
+	@media (max-width: $screen-xs)
+		.hide-xs
+			display none
