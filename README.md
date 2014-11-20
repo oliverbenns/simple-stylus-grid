@@ -1,4 +1,2 @@
-simple-stylus-grid
-==================
-
-A flexible, yet simple Stylus grid, inspired by Bootstrap
+# Simple Stylus Grid
+## Docs coming soon.
