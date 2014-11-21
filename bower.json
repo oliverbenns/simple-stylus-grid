@@ -1,28 +1,28 @@
 {
-  "name": "simple-stylus-grid",
-  "version": "1.0.0",
-  "homepage": "https://github.com/oliverbenns/simple-stylus-grid",
-  "authors": [
-    "Oliver Benns <oliverbenns@gmail.com>"
-  ],
-  "description": "A flexible, yet simple Stylus grid, inspired by Bootstrap",
-  "main": [
-    "grid/index.styl",
-    "grid/grid-variables.styl",
-    "grid/grid-generator.styl"
-  ],
-  "keywords": [
-    "stylus",
-    "grid",
-    "system",
-    "framework"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+	"name": "simple-stylus-grid",
+	"version": "1.0.0",
+	"homepage": "https://github.com/oliverbenns/simple-stylus-grid",
+	"authors": [
+		"Oliver Benns <oliverbenns@gmail.com>"
+	],
+	"description": "A flexible, yet simple Stylus grid, inspired by Bootstrap",
+	"main": [
+		"grid/index.styl",
+		"grid/grid-variables.styl",
+		"grid/grid-generator.styl"
+	],
+	"keywords": [
+		"stylus",
+		"grid",
+		"system",
+		"framework"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
 }
