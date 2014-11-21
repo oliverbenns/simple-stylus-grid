@@ -6,7 +6,11 @@
     "Oliver Benns <oliverbenns@gmail.com>"
   ],
   "description": "A flexible, yet simple Stylus grid, inspired by Bootstrap",
-  "main": "grid/index.styl",
+  "main": [
+    "grid/index.styl",
+    "grid/grid-variables.styl",
+    "grid/grid-generator.styl"
+  ],
   "keywords": [
     "stylus",
     "grid",
