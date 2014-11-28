@@ -76,7 +76,7 @@ In [grid-variables.styl](https://github.com/oliverbenns/simple-stylus-grid/tree/
 
 | Variable  | Description |
 | ------------- | ------------- |
-| `$mobile-first`  | By making this true, you will start your grid using -xs- prefixed classes first. The grid uses min-width's to then detemine any desktop or tablet styles.  |
+| `$mobile-first`  | By making this true, you will start your grid using `-xs-` prefixed classes first. The grid uses min-width's to then detemine any desktop or tablet styles.  |
 | `$grid-columns`  | The total number of columns you wish to have.  |
 | `$grid-gutter`  | The gutter spacing between columns. Pixel value.  |
 | `$screen-xs`, `$screen-md`, etc  | Your breakpoints. Pixel value. |
