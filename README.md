@@ -43,6 +43,18 @@ Always start with a `.wrapper`, followed by your grid classes.
 		p My sidebar is here!
 ```
 
+### Different Device Columns
+
+To change the size of columns at certain screen sizes, use the `-md-`, `-sm-` or `-xs-` classes.
+
+```
+.wrapper
+	.grid-lg-8.grid-md-7.grid-sm-12
+		p My main content is here!
+	.grid-lg-4.grid-md-5.grid-sm-12
+		p My sidebar is here!
+```
+
 ### Nested Columns
 
 When nesting columns inside other columns, always start with a `.row`
